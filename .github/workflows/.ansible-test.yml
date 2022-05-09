@@ -91,8 +91,8 @@ jobs:
         run: |
          echo "PYTHONPATH=/home/runner/work/oneview-ansible-collection:$PYTHONPATH" >> $GITHUB_ENV
 
-      - name: Generating coverage report
-        run: pytest --cov-report xml --cov=plugins/modules tests/unit/
+      # - name: Generating coverage report
+      #   run: pytest --cov-report xml --cov=plugins/modules tests/unit/
 # 
       # - name: "Upload coverage to Codecov"
       #   uses: codecov/codecov-action@v1
