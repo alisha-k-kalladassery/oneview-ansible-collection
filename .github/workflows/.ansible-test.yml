@@ -93,7 +93,7 @@ jobs:
 
       - name: Generating coverage report
         run: pytest --cov-report xml --cov=plugins/modules tests/unit/
-
+# 
       # - name: "Upload coverage to Codecov"
       #   uses: codecov/codecov-action@v1
       #   with:
