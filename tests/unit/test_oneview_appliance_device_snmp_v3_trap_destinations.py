@@ -154,7 +154,7 @@ class TestApplianceDeviceSnmpV3TrapDestinationsModule(OneViewBaseTest):
 
     def test_should_create_new_snmp_v3_trap_destination_with_username(self):
         self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
-        self.resource.get_by_name.return_value = None
+        self.resource.get_by_name.return_value = self.resource
         self.resource.create.return_value = self.resource
 
         self.mock_ansible_module.params = PARAMS_FOR_PRESENT_USING_USERNAME
