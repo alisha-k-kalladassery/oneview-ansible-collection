@@ -21,8 +21,10 @@ __metaclass__ = type
 import mock
 import pytest
 
-from ansible_collections.hpe.oneview.tests.unit.utils.hpe_test_utils import OneViewBaseTest
-from ansible_collections.hpe.oneview.tests.unit.utils.oneview_module_loader import ApplianceDeviceSnmpV3TrapDestinationsModule, OneViewModuleResourceNotFound
+# from ansible_collections.hpe.oneview.tests.unit.utils.hpe_test_utils import OneViewBaseTest
+# from ansible_collections.hpe.oneview.tests.unit.utils.oneview_module_loader import ApplianceDeviceSnmpV3TrapDestinationsModule, OneViewModuleResourceNotFound
+from utils.hpe_test_utils import OneViewBaseTest
+from utils.oneview_module_loader import ApplianceDeviceSnmpV3TrapDestinationsModule, OneViewModuleResourceNotFound
 
 ERROR_MSG = 'Fake message error'
 
@@ -36,6 +38,7 @@ DEFAULT_PARAMS_WITH_USERNAME = dict(
     userName='testUser1',
     port=162,
     destinationAddress='172.0.0.1'
+    data = dict(id='1234')
 )
 
 PARAMS_FOR_PRESENT = dict(
@@ -154,7 +157,7 @@ class TestApplianceDeviceSnmpV3TrapDestinationsModule(OneViewBaseTest):
 
     def test_should_create_new_snmp_v3_trap_destination_with_username(self):
         self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
-        self.resource.get_by_name.return_value = self.resource
+        self.resource.get_by_name.return_value = None
         self.resource.create.return_value = self.resource
 
         self.mock_ansible_module.params = PARAMS_FOR_PRESENT_USING_USERNAME
