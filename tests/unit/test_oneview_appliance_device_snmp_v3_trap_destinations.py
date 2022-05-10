@@ -54,6 +54,7 @@ PARAMS_WITH_CHANGES = dict(
               userId='3953867c-5283-4059-a9ae-33487f901e85')
 )
 
+
 PARAMS_FOR_PRESENT_USING_USERNAME = dict(
     config='config.json',
     state='present',
