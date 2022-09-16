@@ -12,6 +12,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: pull-request
       uses: repo-sync/pull-request@v2
+      permissions:
+        pull-requests: write
       with:
         source_branch: "PR"                                 # If blank, default: triggered branch
         destination_branch: "master" # If blank, default: master
